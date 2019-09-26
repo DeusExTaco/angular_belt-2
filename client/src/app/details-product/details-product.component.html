@@ -1,0 +1,13 @@
+<div class="border m-2 p-2">
+    <h2>Product Details</h2>
+    <div>
+        <h5>Name:</h5>
+        <p>{{ single.name }}</p>
+        <h5>Quantity:</h5>
+        <p>{{ single.quantity | number:'1.0' }}</p>
+        <h5>Price:</h5>
+        <p>${{ single.price | number:'1.2-2' }}</p>
+    </div>
+    <a class="btn btn-secondary mr-2" routerLink='/getAll'>Back</a>
+    <button class="btn btn-danger" (click)='onButtonClickDelete( single._id )'>Delete</button>
+</div>

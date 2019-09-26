@@ -1,0 +1,26 @@
+<div class="border m-2 p-2">
+    <h2>Product List</h2>
+    <a class="btn btn-primary mb-2" routerLink='/addNew'>Add New Product</a>
+
+    <table class="table table-primary col">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product._id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.quantity | number:'1.0' }}</td>
+                <td>${{ product.price | number:'1.2-2' }}</td>
+                <td>
+                    <button class="btn btn-primary mr-2" routerLink='/getOne/{{ product._id }}'>Details</button>
+                    <button class="btn btn-primary" routerLink='/editOne/{{ product._id }}/edit'>Edit</button>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -3,7 +3,7 @@ let   fs        = require('fs'),
       mongoose  = require('mongoose');
 
 // connect to mongodb
-mongoose.connect("mongodb://localhost/belt-app", {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect("mongodb://localhost/belt-app2", {useNewUrlParser: true, useUnifiedTopology: true})
 
 // create a variable that points to the models folder
 var models_path = path.join(__dirname, './../models');
@@ -12,5 +12,5 @@ fs.readdirSync(models_path).forEach(function(file) {
   if(file.indexOf('.js') >= 0) {
     // require the file (this runs the model file which registers the schema)
     require(models_path + '/' + file);
-   }
+  }
 })

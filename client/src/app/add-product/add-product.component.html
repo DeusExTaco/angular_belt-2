@@ -1,0 +1,22 @@
+<div class="border m-2 p-2">
+        <h2>New Product</h2>
+
+        <div *ngFor="let error of errors"> 
+                <p class="text-primary">{{ error }}</p>
+        </div>
+        <form class="col-md-8" (submit)="createProduct(newProduct)" method="POST">
+                <div class="form-group">
+                        <label for="newProduct.name">Name:</label>
+                        <input type="text" class="form-control" name="newProduct.name" [(ngModel)] = "newProduct.name">
+                </div>
+                <div class="form-group">
+                        <label for="newProduct.quantity">Quantity:</label>
+                        <input type="text" class="form-control" name="newProduct.quantity" [(ngModel)] = "newProduct.quantity">
+                </div>
+                <div class="form-group">
+                        <label for="newProduct.price">Price:</label>
+                        <input type="text" class="form-control" name="newProduct.price" [(ngModel)] = "newProduct.price">
+                </div>
+                <a class="btn btn-secondary mr-2" routerLink='/getAll'>Cancel</a> <button class="btn btn-primary mr-2" type="submit">Create</button> 
+        </form>
+</div>
